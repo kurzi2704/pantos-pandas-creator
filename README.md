@@ -82,7 +82,7 @@ for BNB Chain and 10.000 initial supply it would look like the following:
 ```python 
 ...
 # Set initial token supply and minimum token stake
-INITIAL_SUPPLY = 10000 * 10 ** 18  # initial supply is 100 Token with 18 decimals
+INITIAL_SUPPLY = 10000 * 10 ** 18  # initial supply is 10000 Token with 18 decimals
 _MINIMUM_TOKEN_STAKE = 10 ** 3 * 10 ** 8
 
 # Set the addresses for the Pantos forwarder, hub, and PAN token
@@ -108,6 +108,7 @@ Binance Smart Chain
   └─Mainnet: bsc-main
 ...
 ```
+### 5.2 Deploy
 After choosing a network and checking if enough funds are available, we can create our first token with the following 
 command, where `<name of account>` should be replaced by your brownie account id from step 2 and `<network name>` is the 
 id of the desired network (ie. bsc-test for bsc testnet): 
