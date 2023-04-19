@@ -1,0 +1,10 @@
+compiler:
+    solc:
+        version: 0.8.17
+        remappings:
+            - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.1.0"
+            - "@openzeppelin-upgradeable=OpenZeppelin/openzeppelin-contracts-upgradeable@4.8.1"
+
+dependencies:
+  - OpenZeppelin/openzeppelin-contracts@4.1.0
+  - OpenZeppelin/openzeppelin-contracts-upgradeable@4.8.1
