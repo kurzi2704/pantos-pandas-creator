@@ -119,10 +119,10 @@ You will be asked for a password, which you have set for your account in step 2 
 expected you should see something like the following:
 
 ```shell
-pandasCreator % brownie run ./scripts/deploy_token.py deploy_token accountId --network avalanche-fuji
+pandas-creator % brownie run ./scripts/deploy_token.py deploy_token accountId --network avalanche-fuji
 Brownie v1.19.3 - Python development framework for Ethereum
 
-PandascreatorProject is the active project.
+PandasCreatorProject is the active project.
 
 Running 'scripts/deploy_token.py::deploy_token'...
 Enter password for "accountId": 
