@@ -149,4 +149,104 @@ Transaction sent: 0x32397ecedd370ca1c2d7d67317ab0907626c3e80fbc61d1653ccd51fd0ac
   PantosHub.registerToken confirmed   Block: 21046124   Gas used: 141787 (89.80%)
 ```
 
-## 6. Register Token [TODO]
+## 6. Register External Token [TODO]
+If we have deployed our token on 2 or more chains, then we need to tell the Pantos hub how the token should be mapped. 
+Ie. we have our token deployed on 3 chains: `Avalanche`, `BSC` and `FTM`. Now we need to tell the hub of each of those 
+chains the address of the token on the other chains, in our example we would need to call 2 registerExternalToken events
+on each chain. 
+### 6.1 File adaptions
+To perform one registration we need to change the following in our `scripts/register_external_tokens.py` file: 
+* Add the `HUB_ADDRESS` of our current hub, which can be found [here](https://pantos.gitbook.io/technical-documentation/general/deploying-token#overview-of-pantos-blockchain-ids-and-contract-addresses) again.
+* We need to insert our data 
+  * `<address of token on chain>` = the address of token on current chain (the chain where the hub is located)
+  * `<chain_id>` = ID of destination chain (0 = ETH, 1 = BSC, 3 = Avalanche, 5 = Polygon, 6 = Cronos, 7 = Fantom, 8 = Celo) 
+  * `<address of token on different chain>` = the address of the token of the destination chain.
+```python 
+hub.registerExternalToken('<address of token on chain>', '<chain id>', '<address of token on different chain>'.encode('utf-8').strip(),
+            {'from': account}
+    )
+```
+### 6.2 run registration
+To run the registration we need to run the following command, where `<name of account>` should be replaced by your 
+brownie account id from step 2 and `<network name>` is the id of the desired network (ie. bsc-test for bsc testnet):
+```shell 
+brownie run ./scripts/register_external_tokens.py register_token <name of account> --network <network name>
+```
+
+You will be asked for a password, which you have set for your account in step 2 and then, if everything worked as 
+expected you should see something like the following:
+
+```shell 
+Brownie v1.19.3 - Python development framework for Ethereum
+
+PantosPandasCreatorProject is the active project.
+
+Running 'scripts/register_external_tokens.py::register_token'...
+Enter password for "accountId": 
+Transaction sent: 0x42486b717067b5cdaa6487625248fef851461998f5a70687fb3af933d9c16912
+  Gas price: 25.0 gwei   Gas limit: 160167   Nonce: 27
+  PantosHub.registerExternalToken confirmed   Block: 21063179   Gas used: 143838 (89.81%)
+```
+
+## 7. Unregister External Token [TODO]
+Sometimes we need to unregister an external token, for example to register a new one. Therefore
+we can use `unregisterExternalToken`
+
+### 7.1 File adaptions
+To unregister an external token we need to change the following in our `scripts/unregister_external_tokens.py` file: 
+* Add the `HUB_ADDRESS` of our current hub, which can be found [here](https://pantos.gitbook.io/technical-documentation/general/deploying-token#overview-of-pantos-blockchain-ids-and-contract-addresses) again.
+* We need to insert our data 
+  * `<address of token on chain>` = the address of token on current chain (the chain where the hub is located)
+  * `<chain_id>` = ID of destination chain (0 = ETH, 1 = BSC, 3 = Avalanche, 5 = Polygon, 6 = Cronos, 7 = Fantom, 8 = Celo) 
+
+### 7.2 revert external registration
+To run the external registration revert we need to run the following command, where `<name of account>` should be replaced by your 
+brownie account id from step 2 and `<network name>` is the id of the desired network (ie. bsc-test for bsc testnet):
+```shell 
+brownie run ./scripts/unregister_external_tokens.py unregister_external_token <name of account> --network <network name>
+```
+
+You will be asked for a password, which you have set for your account in step 2 and then, if everything worked as 
+expected you should see something like the following:
+
+```shell 
+Brownie v1.19.3 - Python development framework for Ethereum
+
+PantosPandasCreatorProject is the active project.
+
+Running 'scripts/unregister_external_tokens.py::unregister_external_token'...
+Enter password for "accountId": 
+Transaction sent: 0xf62fffeca9b7d9c0ba16b507e35ea2a770047e9f37ef9ccdf54e7d904a9d26cb
+  Gas price: 25.0 gwei   Gas limit: 52895   Nonce: 28
+  PantosHub.unregisterExternalToken confirmed   Block: 21063498   Gas used: 47825 (90.41%)
+```
+
+## 8. Unregister Token 
+Sometimes we want to unregister a token, which, if run through successfully unlocks the PAN we used for registering. 
+
+### 8.1 File adaptions
+To unregister a token we need to change the following in our `scripts/unregister_token.py` file: 
+* Add the `HUB_ADDRESS` of our current hub, which can be found [here](https://pantos.gitbook.io/technical-documentation/general/deploying-token#overview-of-pantos-blockchain-ids-and-contract-addresses) again.
+* Add the `TOKEN_ADDRESS` of the token you want to unregister. 
+
+### 8.2 revert external registration
+To run the registration revert we need to run the following command, where `<name of account>` should be replaced by your 
+brownie account id from step 2 and `<network name>` is the id of the desired network (ie. bsc-test for bsc testnet):
+```shell 
+brownie run ./scripts/unregister_token.py unregister_toke <name of account> --network <network name>
+```
+
+You will be asked for a password, which you have set for your account in step 2 and then, if everything worked as 
+expected you should see something like the following:
+
+```shell 
+Brownie v1.19.3 - Python development framework for Ethereum
+
+PantosPandasCreatorProject is the active project.
+
+Running 'scripts/unregister_token.py::unregister_token'...
+Enter password for "accountId": 
+Transaction sent: 0x26d7ecea2e5dd52849ea41109820775458701fce6f93b37b63e19f917c9c52dc
+  Gas price: 25.0 gwei   Gas limit: 176695   Nonce: 26
+  PantosHub.unregisterToken confirmed   Block: 21063039   Gas used: 158609 (89.76%)
+```
