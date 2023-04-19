@@ -2,6 +2,16 @@
 The following steps describe how deploy a PANDAS token in Pantos supported testnets. This step by step guide
 should guide you through the world of PANDAS and brownie. 
 
+## Table of Contents
+1. [Setup all requirements and prerequisites](#1-setup-all-requirements-and-prerequisites)
+2. [Add private key to brownie project](#2-add-private-key-to-brownie-project)
+3. [Adapt your token settings](#3-adapt-mytokensol-in-contracts-folder)
+4. [Deploy preparations](#4-adapt-deploy_tokenpy-in-scripts-folder)
+5. [Deploy your token](#5-deploy-your-token)
+6. [Register External Token](#6-register-external-token)
+7. [Unregister External Token](#7-unregister-external-token)
+8. [Unregister Token](#8-unregister-token)
+
 ## 1. Setup all requirements and prerequisites
 * To be able to start with everything we need python installed. The version should be `3.6 or later`, but not greater 
 than `3.9`
