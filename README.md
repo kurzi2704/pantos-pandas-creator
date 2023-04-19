@@ -149,7 +149,7 @@ Transaction sent: 0x32397ecedd370ca1c2d7d67317ab0907626c3e80fbc61d1653ccd51fd0ac
   PantosHub.registerToken confirmed   Block: 21046124   Gas used: 141787 (89.80%)
 ```
 
-## 6. Register External Token [TODO]
+## 6. Register External Token
 If we have deployed our token on 2 or more chains, then we need to tell the Pantos hub how the token should be mapped. 
 Ie. we have our token deployed on 3 chains: `Avalanche`, `BSC` and `FTM`. Now we need to tell the hub of each of those 
 chains the address of the token on the other chains, in our example we would need to call 2 registerExternalToken events
@@ -188,7 +188,7 @@ Transaction sent: 0x42486b717067b5cdaa6487625248fef851461998f5a70687fb3af933d9c1
   PantosHub.registerExternalToken confirmed   Block: 21063179   Gas used: 143838 (89.81%)
 ```
 
-## 7. Unregister External Token [TODO]
+## 7. Unregister External Token
 Sometimes we need to unregister an external token, for example to register a new one. Therefore
 we can use `unregisterExternalToken`
 
