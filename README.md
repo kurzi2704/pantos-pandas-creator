@@ -1,5 +1,6 @@
 # Pantos PANDAS Token Deploy - TESTNET
-The following files are used to deploy a PANDAS token in Pantos supported testnets. 
+The following steps describe how deploy a PANDAS token in Pantos supported testnets. This step by step guide
+should guide you through the world of PANDAS and brownie. 
 
 ## 1. Setup all requirements and prerequisites
 * To be able to start with everything we need python installed. The version should be `3.6 or later`, but not greater 
