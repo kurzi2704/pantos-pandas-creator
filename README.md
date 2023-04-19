@@ -110,7 +110,7 @@ Binance Smart Chain
 ...
 ```
 
-If you are not able to find the network you are searching for, you probably need to import it. Follow
+If you are not able to find the network you are searching for, you probably need to import it. Following
 that [Guide](https://eth-brownie.readthedocs.io/en/stable/network-management.html#adding-a-new-network) helps you by doing that. 
 ### 5.2 Deploy
 After choosing a network and checking if enough funds are available, we can create our first token with the following 
