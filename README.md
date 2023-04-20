@@ -13,8 +13,7 @@ should guide you through the world of PANDAS and brownie.
 8. [Unregister Token](#8-unregister-token)
 
 ## 1. Setup all requirements and prerequisites
-* To be able to start with everything we need python installed. The version should be `3.6 or later`, but not greater 
-than `3.9`
+* To be able to start with everything we need python installed. The version should be `3.6 or later`
 * _brownie_ needs to be installed next. This is done by `pip install eth-brownie` - 
 there are also other ways of installing it, just visit the [docs](https://eth-brownie.readthedocs.io/en/stable/install.html#dependencies).
 * If the installation of python and brownie was successfully, we should now be able to run `brownie` in our command line 
