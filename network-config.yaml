@@ -25,7 +25,7 @@ live:
       - name: Goerli (Infura)
         chainid: 5
         id: goerli-test
-        host: https://goerli.infura.io/v3/...... # <update your projectid from infura
+        host: https://goerli.infura.io/v3/$WEB3_INFURA_PROJECT_ID # < update your projectid from infura
         explorer: https://api-goerli.etherscan.io/api
         multicall2: "0x5BA1e12693Dc8F9c48aAD8770482f4739bEeD696"
         provider: infura
@@ -180,13 +180,13 @@ live:
       - name: Mainnet (Infura)
         chainid: 137
         id: polygon-main
-        host: https://polygon-mainnet.infura.io/v3/68be3027359a4525a4414220492d931c
+        host: https://polygon-mainnet.infura.io/v3/$WEB3_INFURA_PROJECT_ID
         explorer: https://api.polygonscan.com/api
         multicall2: "0xc8E51042792d7405184DfCa245F2d27B94D013b6"
       - name: Mumbai Testnet (Infura)
         chainid: 80001
         id: polygon-test
-        host: https://polygon-mumbai.infura.io/v3/...... # < update here your projectID from infura
+        host: https://polygon-mumbai.infura.io/v3/$WEB3_INFURA_PROJECT_ID  # < update here your projectID from infura
         explorer: https://api-testnet.polygonscan.com/api
         multicall2: "0x6842E0412AC1c00464dc48961330156a07268d14"
   - name: XDai
