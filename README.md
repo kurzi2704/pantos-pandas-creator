@@ -242,7 +242,7 @@ To unregister a token we need to change the following in our `scripts/unregister
 To run the registration revert we need to run the following command, where `<name of account>` should be replaced by your 
 brownie account id from step 2 and `<network name>` is the id of the desired network (ie. bsc-test for bsc testnet):
 ```shell 
-brownie run ./scripts/unregister_token.py unregister_toke <name of account> --network <network name>
+brownie run ./scripts/unregister_token.py unregister_token <name of account> --network <network name>
 ```
 
 You will be asked for a password, which you have set for your account in step 2 and then, if everything worked as 
