@@ -25,7 +25,7 @@ live:
       - name: Goerli (Infura)
         chainid: 5
         id: goerli-test
-        host: https://goerli.infura.io/...... # <update your projectid from infura
+        host: https://goerli.infura.io/v3/...... # <update your projectid from infura
         explorer: https://api-goerli.etherscan.io/api
         multicall2: "0x5BA1e12693Dc8F9c48aAD8770482f4739bEeD696"
         provider: infura
